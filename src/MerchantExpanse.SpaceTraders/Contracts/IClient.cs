@@ -4,54 +4,54 @@ using System.Threading.Tasks;
 
 namespace MerchantExpanse.SpaceTraders.Contracts
 {
-	public interface IClient
-	{
-		Task<string> GetStatusAsync();
+    public interface IClient
+    {
+        Task<string> GetStatusAsync();
 
-		Task<User> GetUserAsync();
+        Task<User> GetUserAsync();
 
-		Task<IEnumerable<Loan>> GetLoansAsync();
+        Task<IEnumerable<Loan>> GetLoansAsync();
 
-		Task<IEnumerable<AvailableLoan>> GetAvailableLoansAsync();
+        Task<IEnumerable<AvailableLoan>> GetAvailableLoansAsync();
 
-		Task<User> TakeOutLoanAsync(string type);
+        Task<User> TakeOutLoanAsync(string type);
 
-		Task<Ship> GetShipAsync(string shipId);
+        Task<Ship> GetShipAsync(string shipId);
 
-		Task<IEnumerable<Ship>> GetShipsAsync();
+        Task<IEnumerable<Ship>> GetShipsAsync();
 
-		Task<IEnumerable<AvailableShip>> GetAvailableShipsAsync(string shipClass = null);
+        Task<IEnumerable<AvailableShip>> GetAvailableShipsAsync(string shipClass = null);
 
-		Task<User> PurchaseShipAsync(string location, string type);
+        Task<User> PurchaseShipAsync(string location, string type);
 
-		Task ScrapShipAsync(string shipId);
+        Task ScrapShipAsync(string shipId);
 
-		Task<IEnumerable<StarSystem>> GetSystemsAsync();
+        Task<IEnumerable<StarSystem>> GetSystemsAsync();
 
-		Task<IEnumerable<Location>> GetSystemLocations(string systemSymbol);
+        Task<IEnumerable<Location>> GetSystemLocations(string systemSymbol);
 
-		Task<LocationDetail> GetLocationAsync(string locationSymbol);
+        Task<LocationDetail> GetLocationAsync(string locationSymbol);
 
-		Task<LocationDetail> GetLocationShipsAsync(string locationSymbol);
+        Task<LocationDetail> GetLocationShipsAsync(string locationSymbol);
 
-		Task<MarketLocation> GetMarketplaceAsync(string locationSymbol);
+        Task<MarketLocation> GetMarketplaceAsync(string locationSymbol);
 
-		Task<Order> PurchaseGoodAsync(string shipId, string good, int quantity);
+        Task<Order> PurchaseGoodAsync(string shipId, string good, int quantity);
 
-		Task<Order> SellGoodAsync(string shipId, string good, int quantity);
+        Task<Order> SellGoodAsync(string shipId, string good, int quantity);
 
-		Task<JettisonedCargo> JettisonCargoAsync(string shipId, string good, int quantity);
+        Task<JettisonedCargo> JettisonCargoAsync(string shipId, string good, int quantity);
 
-		Task<Deposit> DepositCargoAsync(string structureId, string shipId, string good, int quantity);
+        Task<Deposit> DepositCargoAsync(string structureId, string shipId, string good, int quantity);
 
-		Task<IEnumerable<PublicFlightPlan>> GetFlightPlansAsync(string systemSymbol);
+        Task<IEnumerable<PublicFlightPlan>> GetFlightPlansAsync(string systemSymbol);
 
-		Task<FlightPlan> GetFlightPlanAsync(string flightPlanId);
+        Task<FlightPlan> GetFlightPlanAsync(string flightPlanId);
 
-		Task<FlightPlan> SubmitFightPlanAsync(string shipId, string destinationId);
+        Task<FlightPlan> SubmitFightPlanAsync(string shipId, string destinationId);
 
-		Task<FlightPlan> WarpShipAsync(string shipId);
+        Task<FlightPlan> WarpShipAsync(string shipId);
 
-		Task<Structure> GetStructureAsync(string structureId);
-	}
+        Task<Structure> GetStructureAsync(string structureId);
+    }
 }
